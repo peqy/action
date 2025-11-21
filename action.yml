@@ -1,0 +1,40 @@
+name: 'Peqy Code Review'
+description: 'Triggers Peqy code review by sending PR information to the Peqy API'
+author: 'Peqy'
+
+branding:
+  icon: 'check-circle'
+  color: 'blue'
+
+inputs:
+  api-key:
+    description: 'Peqy API key for authentication. Should be stored in GitHub Secrets.'
+    required: true
+  api-url:
+    description: 'API endpoint URL. Override for testing with staging/development environments.'
+    required: false
+    default: 'http://demo.peqy.ai/api/v1/checks/trigger'
+  timeout:
+    description: 'Request timeout in milliseconds (1000-300000)'
+    required: false
+    default: '30000'
+  max-retries:
+    description: 'Maximum number of retry attempts for failed requests (1-5)'
+    required: false
+    default: '3'
+  fail-on-error:
+    description: 'Whether to fail the workflow if the API request fails'
+    required: false
+    default: 'true'
+
+outputs:
+  status-code:
+    description: 'HTTP status code from the API response'
+  response:
+    description: 'Response body from the API'
+  success:
+    description: 'Whether the API call succeeded (true/false)'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

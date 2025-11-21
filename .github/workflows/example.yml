@@ -1,0 +1,19 @@
+name: Example - Trigger Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  trigger-review:
+    name: Trigger Code Review
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Trigger Review
+        uses: ./  # In customer repos, this would be: peqy/action@v1
+        with:
+          api-key: ${{ secrets.PEQY_API_KEY }}

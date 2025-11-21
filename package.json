@@ -1,0 +1,29 @@
+{
+  "name": "peqy-github-action",
+  "version": "1.0.0",
+  "description": "GitHub Action that triggers Peqy code reviews by sending PR information to the Peqy API",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "test": "node test/local-test.js",
+    "test:integration": "./test/integration-test.sh",
+    "test:mock-server": "node test/mock-server.js",
+    "test:scenario": "node test/local-test.js"
+  },
+  "keywords": [
+    "github-action",
+    "code-review",
+    "pull-request",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@actions/http-client": "^2.2.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
+  }
+}
