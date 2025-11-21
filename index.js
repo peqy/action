@@ -130,7 +130,7 @@ async function run() {
   try {
     // Get inputs
     const apiKey = core.getInput('api-key', { required: true });
-    const apiUrl = core.getInput('api-url', { required: false }) || 'http://demo.peqy.ai/api/v1/checks/trigger';
+    const apiUrl = core.getInput('api-url', { required: false }) || 'https://demo.peqy.ai/api/v1/checks/trigger';
     const timeout = parseInt(core.getInput('timeout', { required: false }) || '30000', 10);
     const maxRetries = parseInt(core.getInput('max-retries', { required: false }) || '3', 10);
     const failOnError = core.getInput('fail-on-error', { required: false }) !== 'false';

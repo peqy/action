@@ -62,7 +62,7 @@ jobs:
         uses: peqy/action@v1
         with:
           api-key: ${{ secrets.PEQY_API_KEY }}
-          # api-url: 'http://demo.peqy.ai/api/v1/checks/trigger'  # Default, can be omitted
+          # api-url: 'https://demo.peqy.ai/api/v1/checks/trigger'  # Default, can be omitted
           timeout: '45000'           # 45 seconds
           max-retries: '3'           # Retry up to 3 times
           fail-on-error: 'true'      # Fail workflow on error
@@ -151,7 +151,7 @@ jobs:
 | Input | Description | Required | Default |
 |-------|-------------|----------|---------|
 | `api-key` | API key for authentication. Store in GitHub Secrets. | **Yes** | - |
-| `api-url` | API endpoint URL. Override for testing/staging environments. | No | `http://demo.peqy.ai/api/v1/checks/trigger` |
+| `api-url` | API endpoint URL. Override for testing/staging environments. | No | `https://demo.peqy.ai/api/v1/checks/trigger` |
 | `timeout` | Request timeout in milliseconds (1000-300000) | No | `30000` (30s) |
 | `max-retries` | Maximum retry attempts for failed requests (1-5) | No | `3` |
 | `fail-on-error` | Whether to fail the workflow if the API request fails | No | `true` |

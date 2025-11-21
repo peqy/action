@@ -13,7 +13,7 @@ inputs:
   api-url:
     description: 'API endpoint URL. Override for testing with staging/development environments.'
     required: false
-    default: 'http://demo.peqy.ai/api/v1/checks/trigger'
+    default: 'https://demo.peqy.ai/api/v1/checks/trigger'
   timeout:
     description: 'Request timeout in milliseconds (1000-300000)'
     required: false
